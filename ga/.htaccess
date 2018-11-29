@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} ^/404/$
+RewriteRule ^(.*)$ error-page-404.html [L]

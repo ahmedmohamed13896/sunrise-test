@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>sunrisedetox.info</title>
+	<link rel="shortcut icon" href="assets/img/favicon.ico"/>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flexslider.css">
+	<link rel="stylesheet" href="assets/css/lightgallery.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/imgNotes.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/media-query.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="top-header">
+            <div class="container">
+                <p>Most Major Insurance Accepted.</p>
+            </div>
+        </div>
+        <div class="header-second">
+            <div class="container clearfix">
+                <div class="logo-container pull-left"><a href="index.html"><img src="assets/img/logo.png"></a></div>
+                <div class="pull-right header-right-logo text-right">
+                    <div class="d-flex align-items-center">
+                        <h5>Over 30,000 People Detoxed from Drugs and Alcohol Since 2003</h5>
+                        <div class="header-brand-logo">
+                            <ul>
+                                <li><a href="http://www.inc.com/profile/sunrise-detox-centers" target="_blank"><img src="assets/img/inc5000_logo-300x300.png"></a></li>
+                                <li><a href="http://www.bbb.org/south-east-florida/business-reviews/rehabilitation-services/sunrise-detoxification-center-in-lake-worth-fl-92008501" target="_blank"><img src="assets/img/bbb_logo.png"></a></li>
+                                <li><a href="#"><img src="assets/img/jcaho_goldseal_seal.png"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="error-section-wrapper">
+		<div class="container text-center">
+			<div class="text-center">
+				<img src="assets/img/error-404.png">
+			</div>
+			<h1> Page Not Found </h1>
+			<p> The page you are looking for was moved, renamed or might be deleted. </p>
+			<div class="btn-action text-center">
+				<a href="" class="btn btn-primary"> Back to Homepage </a>
+			</div>
+			
+		</div>
+	</section>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="text-center"><img src="assets/img/white-logo.png">
+                <p>© Copyright Sunrise Detox <span class="currentyear"></span>.All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.flexslider-min.js"></script>
+    <script src="assets/js/hammer.min.js"></script>
+    <script src="https://unpkg.com/jquery-hammerjs@2.0.0"></script>
+    <script src="assets/js/imgViewer.js"></script>
+    <script src="assets/js/imgNotes.js"></script>
+	
+	<script src="assets/js/lightgallery-all.min.js"></script>
+    <script src="assets/js/jquery.mousewheel.min.js"></script>
+	
+    <script src="assets/js/custom.js"></script>
+	<script>
+	
+	$(document).ready(function(){
+        $('#lightgallery').lightGallery();
+    });
+	
+var notes = [{x: "0.520", y:"0.650", note:'\<a href="http://sunrisedetox.info/ga/atlanta/" target="_blank">Atlanta</a>'}, 
+						{x: "0.595", y:"0.805", note:'\<a href="http://sunrisedetox.info/fl/orlando/" target="_blank">Orlando</a>'},
+						{x: "0.620", y:"0.880", note:'\<a href="http://sunrisedetox.info/fl/lake-worth/" target="_blank">Lake Worth</a>'},
+						{x: "0.650", y:"0.930", note:'\<a href="http://sunrisedetox.info/fl/ft-lauderdale/" target="_blank">FT Lauderdale</a>'},
+						{x: "0.730", y:"0.235", note:'\<a href="http://sunrisedetox.info/nj/millbury/" target="_blank">Millbury</a>'},
+						{x: "0.860", y:"0.370", note:'\<a href="http://sunrisedetox.info/nj/morristown/" target="_blank">Morristown</a>'},
+						{x: "0.890", y:"0.450", note:'\<a href="http://sunrisedetox.info/nj/toms-river/" target="_blank">Toms River</a>'},
+						{x: "0.840", y:"0.500", note:'\<a href="http://sunrisedetox.info/nj/cherry-hill/" target="_blank">Cherry Hill</a>'}
+						];
+    
+
+				$(window).on('load',function() {
+                    
+                    cust_onEdit = function( ev, elem) {
+						var $elem = $(elem);
+						$('#NoteDialog').remove();
+						return $('<div id="NoteDialog"></div>').dialog({
+							title: "Note Editor",
+							resizable: false,
+							modal: true,
+                            height: "300",
+							width: "450",
+							position: { my: "left bottom", at: "right top", of: elem},
+							buttons: {
+								"Save": function() {
+									var txt = $('textarea', this).val();
+									$elem.data("note").note = txt;
+									$(this).dialog("close");
+								},
+								"Delete": function() {
+									$elem.trigger("remove");
+									$(this).dialog("close");
+								},
+								Cancel: function() {
+									$(this).dialog("close");
+								}
+							},
+								open: function() {
+									$(this).css("overflow", "hidden");
+									var textarea = $('<textarea id="txt" style="height:100%; width:100%;">');
+									$(this).html(textarea);
+									textarea.val($elem.data("note").note);
+								}
+                        });
+                    };
+					var $img = $("#image").imgNotes({ onEdit: cust_onEdit });
+					var widg = $img.data().wgmImgNotes;
+					$img.imgNotes("import", notes);
+					
+					var $imgmobile = $("#imagemobile").imgNotes({ onEdit: cust_onEdit });
+					var widgmobile = $imgmobile.data().wgmImgNotes;
+					$imgmobile.imgNotes("import", notes);
+				});</script>
+</body>
+
+</html>
