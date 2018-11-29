@@ -1,4 +1,1 @@
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_URI} ^/404/$
-RewriteRule ^(.*)$ error-page-404.html [L]
+ErrorDocument 404 404/404.html
